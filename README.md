@@ -1,2 +1,3 @@
-Near-Duplicate Image Detection using Locality Sensitive Hashing
--------------------------------------------------------------
+# Near-Duplicate Image Detection
+
+![AugmentedImages.png](resources/AugmentedImages.png "")
