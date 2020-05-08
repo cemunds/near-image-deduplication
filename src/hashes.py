@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 
-def dhash(image, hash_size=8):
+def dhash(image, k=8):
     """
     Hashes an image with the difference hash algorithm. It converts the image to grayscale and compares the
     pixel intensities of the image to another version of the same image, shifted one pixel to the right. This
@@ -13,6 +13,6 @@ def dhash(image, hash_size=8):
     :return: A numpy array containing {hash_size} bits.
     """
     gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    resized = cv2.resize(gray, (hash_size + 1, hash_size))
+    resized = cv2.resize(gray, (k + 1, k))
     diff = resized[:, 1:] > resized[:, :-1]
     return np.array([1 if i else 0 for i in diff.flatten()])
